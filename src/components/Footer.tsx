@@ -138,13 +138,13 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-primary shrink-0" />
-                <a href="tel:+551199999999" className="text-gray-300 hover:text-white hover:underline transition-colors">
-                  (31) 3469-0047
+                <a href="tel:+553534690047" className="text-gray-300 hover:text-white hover:underline transition-colors">
+                  (35) 3469-0047
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-primary shrink-0" />
-                <a href="mailto:contato@omtsaude.com.br" className="text-gray-300 hover:text-white hover:underline transition-colors">
+                <a href="mailto:contato@omtmedicinadotrabalho.com.br" className="text-gray-300 hover:text-white hover:underline transition-colors">
                   contato@omtmedicinadotrabalho.com.br
                 </a>
               </li>
