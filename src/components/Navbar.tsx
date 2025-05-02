@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,10 +35,7 @@ const Navbar = () => {
     >
       <div className="container-section flex justify-between items-center">
         <Link to="/" className="flex items-center">
-          <span className="font-montserrat text-2xl font-bold text-primary">OMT</span>
-          <span className="hidden sm:inline-block font-montserrat text-lg ml-2 text-gray-700">
-            Medicina e Segurança do Trabalho
-          </span>
+          <Logo />
         </Link>
 
         {/* Desktop Navigation */}
