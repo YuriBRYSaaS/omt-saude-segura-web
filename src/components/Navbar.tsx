@@ -10,6 +10,13 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
+  // WhatsApp message link generator
+  const getWhatsAppLink = () => {
+    const phoneNumber = "5531994630047"; // Update with your actual WhatsApp number
+    const message = "Olá! Estou entrando em contato através do site da OMT Medicina do Trabalho.";
+    return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -72,10 +79,16 @@ const Navbar = () => {
           >
             Contato
           </Link>
-          <Button variant="default" className="bg-primary hover:bg-primary-dark">
-            <Phone className="mr-2 h-4 w-4" />
-            (31) 3469-0047
-          </Button>
+          <a 
+            href={getWhatsAppLink()} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            <Button variant="default" className="bg-primary hover:bg-primary-dark">
+              <Phone className="mr-2 h-4 w-4" />
+              (31) 3469-0047
+            </Button>
+          </a>
         </div>
 
         {/* Mobile Navigation Button */}
@@ -142,10 +155,17 @@ const Navbar = () => {
             >
               Contato
             </Link>
-            <Button variant="default" className="bg-primary hover:bg-primary-dark w-full">
-              <Phone className="mr-2 h-4 w-4" />
-              (31) 3469-0047
-            </Button>
+            <a 
+              href={getWhatsAppLink()} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="w-full"
+            >
+              <Button variant="default" className="bg-primary hover:bg-primary-dark w-full">
+                <Phone className="mr-2 h-4 w-4" />
+                (31) 3469-0047
+              </Button>
+            </a>
           </div>
         </div>
       )}
