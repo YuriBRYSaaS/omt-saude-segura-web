@@ -1,6 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin } from "lucide-react";
+import Logo from "./Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,7 +11,9 @@ const Footer = () => {
       <div className="container-section">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="font-montserrat text-xl font-semibold mb-4">OMT</h3>
+            <Link to="/" className="flex items-center">
+              <Logo />
+            </Link>
             <p className="text-gray-300 mb-4">
               Soluções completas em medicina e segurança do trabalho para empresas
               que valorizam a saúde e o bem-estar de seus colaboradores.
@@ -91,7 +94,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          
+
           <div>
             <h3 className="font-montserrat text-xl font-semibold mb-4">Links Rápidos</h3>
             <ul className="space-y-2">
@@ -122,7 +125,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="font-montserrat text-xl font-semibold mb-4">Contato</h3>
             <ul className="space-y-3">
@@ -136,19 +139,19 @@ const Footer = () => {
               <li className="flex items-center">
                 <Phone className="h-5 w-5 mr-2 text-primary shrink-0" />
                 <a href="tel:+551199999999" className="text-gray-300 hover:text-white hover:underline transition-colors">
-                  (11) 9999-9999
+                  (31) 3469-0047
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="h-5 w-5 mr-2 text-primary shrink-0" />
                 <a href="mailto:contato@omtsaude.com.br" className="text-gray-300 hover:text-white hover:underline transition-colors">
-                  contato@omtsaude.com.br
+                  contato@omtmedicinadotrabalho.com.br
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 pt-6 mt-6 text-sm text-gray-400 text-center">
           <p>&copy; {currentYear} OMT - Ocupacional Medicina do Trabalho. Todos os direitos reservados.</p>
         </div>

@@ -74,7 +74,7 @@ const Navbar = () => {
           </Link>
           <Button variant="default" className="bg-primary hover:bg-primary-dark">
             <Phone className="mr-2 h-4 w-4" />
-            (11) 9999-9999
+            (31) 3469-0047
           </Button>
         </div>
 
@@ -144,7 +144,7 @@ const Navbar = () => {
             </Link>
             <Button variant="default" className="bg-primary hover:bg-primary-dark w-full">
               <Phone className="mr-2 h-4 w-4" />
-              (11) 9999-9999
+              (31) 3469-0047
             </Button>
           </div>
         </div>
