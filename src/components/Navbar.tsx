@@ -12,7 +12,7 @@ const Navbar = () => {
 
   // WhatsApp message link generator
   const getWhatsAppLink = () => {
-    const phoneNumber = "5531994630047"; // Update with your actual WhatsApp number
+    const phoneNumber = "553534690047"; // Update with your actual WhatsApp number
     const message = "Olá! Estou entrando em contato através do site da OMT Medicina do Trabalho.";
     return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
   };
@@ -86,7 +86,7 @@ const Navbar = () => {
           >
             <Button variant="default" className="bg-primary hover:bg-primary-dark">
               <Phone className="mr-2 h-4 w-4" />
-              (31) 3469-0047
+              (35) 3469-0047
             </Button>
           </a>
         </div>
