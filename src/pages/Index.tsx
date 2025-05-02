@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -52,7 +53,7 @@ const Index = () => {
                   </Button>
                 </Link>
                 <Link to="/servicos">
-                  <Button variant="outline" className="bg-white/10 text-white hover:bg-white/20 border-white/40 text-lg px-6 py-6">
+                  <Button variant="outline" className="bg-white/10 text-white hover:bg-white/30 hover:text-white border-white/40 text-lg px-6 py-6">
                     Segurança do Trabalho
                   </Button>
                 </Link>
@@ -223,7 +224,7 @@ const Index = () => {
               </Button>
             </Link>
             <Link to="/servicos">
-              <Button variant="outline" className="text-white border-white hover:bg-white/10 text-lg px-6 py-6">
+              <Button variant="outline" className="text-white border-white hover:bg-white/10 text-white text-lg px-6 py-6">
                 Conhecer serviços
               </Button>
             </Link>

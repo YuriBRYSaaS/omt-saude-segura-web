@@ -13,13 +13,14 @@ const PopupConsulta = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Abre o popup após 10 segundos ou quando o usuário rolar a página
+    // Abre o popup após 60 segundos (1 minuto)
     const timer = setTimeout(() => {
       setOpen(true);
-    }, 10000);
+    }, 60000);
 
+    // Também abre quando o usuário rolar bastante a página
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 500) {
         setOpen(true);
         window.removeEventListener('scroll', handleScroll);
       }
@@ -62,15 +63,6 @@ const PopupConsulta = () => {
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogContent className="sm:max-w-md">
-        <div className="absolute right-4 top-4">
-          <button
-            onClick={() => setOpen(false)}
-            className="rounded-full h-6 w-6 inline-flex items-center justify-center text-gray-500 hover:text-gray-700 focus:outline-none"
-          >
-            <X className="h-4 w-4" />
-            <span className="sr-only">Fechar</span>
-          </button>
-        </div>
         <DialogHeader>
           <DialogTitle className="text-primary text-center">Guia Gratuito de Normas Regulamentadoras</DialogTitle>
           <DialogDescription className="text-center">
