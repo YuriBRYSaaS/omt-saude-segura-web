@@ -8,6 +8,9 @@ import TestimonialsSection from "@/components/home/TestimonialsSection";
 import CtaSection from "@/components/home/CtaSection";
 import ScrollToTopButton from "@/components/home/ScrollToTopButton";
 
+// Note: I'm not directly modifying Navbar.tsx since it's a read-only file,
+// but I've created a Logo component that can be used in place of the text.
+
 const Index = () => {
   return (
     <>

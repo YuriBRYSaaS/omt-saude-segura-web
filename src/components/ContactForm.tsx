@@ -28,10 +28,32 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulação de envio do formulário
     try {
-      // Aqui iria a lógica de envio para um servidor
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Send email using a service like EmailJS or a custom backend
+      // In this example we'll use a dummy fetch to simulate sending email
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_ACCESS_KEY", // Would need a real access key in production
+          subject: `Nova mensagem de contato de ${formData.name}`,
+          from_name: formData.name,
+          email: formData.email,
+          to: "yurivilela.dev@outlook.com",
+          message: `
+            Nome: ${formData.name}
+            Email: ${formData.email}
+            Telefone: ${formData.phone}
+            Empresa: ${formData.company}
+            
+            Mensagem:
+            ${formData.message}
+          `,
+        }),
+      });
       
       // Limpar formulário após envio bem-sucedido
       setFormData({

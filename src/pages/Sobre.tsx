@@ -244,7 +244,7 @@ const Sobre = () => {
               </Button>
             </Link>
             <Link to="/servicos">
-              <Button variant="outline" className="text-white border-white hover:bg-white/10 text-lg px-6 py-3">
+              <Button variant="outline" className="text-primary border-white hover:bg-white/10 text-lg px-6 py-3">
                 Ver nossos serviços
               </Button>
             </Link>

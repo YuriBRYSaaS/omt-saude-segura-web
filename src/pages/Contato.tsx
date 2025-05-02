@@ -55,8 +55,8 @@ const Contato = () => {
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-1">Endereço</h3>
                     <address className="text-gray-700 not-italic">
-                      Av. Paulista, 1000, Bela Vista<br />
-                      São Paulo - SP, CEP: 01310-100
+                      R. Carmélia Flora, 37 Centro<br />
+                      Campestre - MG, CEP: 37730-000
                     </address>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ const Contato = () => {
               </div>
             </div>
             
-            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg border border-gray-100">
+            <div className="bg-white p-6 md:p-8 rounded-lg shadow-lg border border-gray-100 h-fit">
               <h2 className="text-2xl font-semibold text-gray-800 mb-6">Envie uma mensagem</h2>
               <ContactForm />
             </div>
@@ -117,14 +117,16 @@ const Contato = () => {
         <div className="container-section">
           <h2 className="text-2xl font-semibold text-gray-800 mb-6 text-center">Nossa localização</h2>
           <div className="rounded-lg overflow-hidden shadow-lg h-[400px]">
-            {/* Iframe para Google Maps - Em uma implementação real, seria inserido o iframe correto do Google Maps */}
-            <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-600">
-              <p className="text-center">
-                <MapPin className="h-10 w-10 mx-auto mb-4 text-primary/60" />
-                Mapa do Google estaria inserido aqui<br />
-                Av. Paulista, 1000, Bela Vista, São Paulo - SP
-              </p>
-            </div>
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3711.0227009172553!2d-46.24356908503!3d-21.507755985724598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94b50c83c733fc21%3A0x4b8725d916a76b58!2sR.%20Carm%C3%A9lia%20Flora%2C%2037%20-%20Centro%2C%20Campestre%20-%20MG%2C%2037730-000!5e0!3m2!1spt-BR!2sbr!4v1651654321000!5m2!1spt-BR!2sbr" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Localização OMT Medicina do Trabalho"
+            />
           </div>
         </div>
       </section>
