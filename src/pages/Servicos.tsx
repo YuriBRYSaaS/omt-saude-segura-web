@@ -1,9 +1,8 @@
-
 import React from "react";
 import ImageBanner from "@/components/ImageBanner";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { FileText, FileMedical, BriefcaseMedical, ShieldCheck, CheckCircle } from "lucide-react";
+import { FileText, Stethoscope, BriefcaseMedical, ShieldCheck, CheckCircle } from "lucide-react";
 
 const Servicos = () => {
   return (
@@ -31,7 +30,7 @@ const Servicos = () => {
                 <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
                   <div className="flex items-start">
                     <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4 shrink-0">
-                      <FileMedical className="h-5 w-5 text-primary" />
+                      <Stethoscope className="h-5 w-5 text-primary" />
                     </div>
                     <div>
                       <h3 className="text-xl font-semibold text-gray-800 mb-2">Exames Ocupacionais</h3>

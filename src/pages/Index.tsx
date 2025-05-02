@@ -1,9 +1,8 @@
-
 import { useState, useEffect } from "react";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ShieldCheck, FileText, FileMedical, BriefcaseMedical } from "lucide-react";
+import { ArrowRight, ShieldCheck, FileText, Stethoscope, BriefcaseMedical } from "lucide-react";
 import { Link } from "react-router-dom";
 import PopupConsulta from "@/components/PopupConsulta";
 
@@ -95,7 +94,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center">
                   <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
-                    <FileMedical className="h-5 w-5 text-primary" />
+                    <Stethoscope className="h-5 w-5 text-primary" />
                   </div>
                   <span className="font-medium">Equipe especializada</span>
                 </div>
@@ -143,7 +142,7 @@ const Index = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <ServiceCard
-              icon={<FileMedical className="h-6 w-6 text-white" />}
+              icon={<Stethoscope className="h-6 w-6 text-white" />}
               title="Exames Ocupacionais"
               description="Realizamos todos os exames exigidos pelas normas regulamentadoras: admissionais, periódicos, de retorno ao trabalho, de mudança de função e demissionais."
               link="/servicos"
