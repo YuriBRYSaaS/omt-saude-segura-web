@@ -39,8 +39,26 @@ const PopupConsulta = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulação de envio para um servidor
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Enviando o email para yurivilela.dev@outlook.com
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "a2c2911b-76a4-4b1d-ada7-23e1878935e2", // Usando a mesma chave do formulário de contato
+          subject: "Solicitação de Guia de Normas Regulamentadoras",
+          from_name: "Visitante do Site",
+          email: email, // Email do usuário que preencheu o formulário
+          to: "yurivilela.dev@outlook.com",
+          message: `
+            Um visitante solicitou o guia de Normas Regulamentadoras.
+            
+            Email para envio: ${email}
+          `,
+        }),
+      });
       
       toast({
         title: "Solicitação enviada!",
