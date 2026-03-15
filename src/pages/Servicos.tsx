@@ -2,524 +2,341 @@ import React from "react";
 import ImageBanner from "@/components/ImageBanner";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { FileText, Stethoscope, BriefcaseMedical, ShieldCheck, CheckCircle } from "lucide-react";
+import {
+  Stethoscope,
+  ShieldCheck,
+  FlaskConical,
+  CheckCircle,
+  ArrowRight,
+  Heart,
+  Eye,
+  Brain,
+  Activity,
+  FileText,
+  ClipboardList,
+  Scale,
+  Ear,
+  Radiation,
+  TestTube,
+  Monitor,
+  Gauge,
+  Waves,
+  Thermometer,
+  Wind,
+  Beaker,
+} from "lucide-react";
+import medicinaImg from "@/assets/medicina-ocupacional.jpg";
+import segurancaImg from "@/assets/seguranca-trabalho.jpg";
+import higieneImg from "@/assets/higiene-ocupacional.jpg";
+
+const ServiceItem = ({ text }: { text: string }) => (
+  <li className="flex items-start gap-3 py-2">
+    <CheckCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+    <span className="text-foreground/80">{text}</span>
+  </li>
+);
 
 const Servicos = () => {
   return (
     <>
-      <ImageBanner 
-        imageUrl="https://images.unsplash.com/photo-1519389950473-47ba0277781c" 
-        title="Nossos Serviços" 
+      <ImageBanner
+        imageUrl="https://images.unsplash.com/photo-1519389950473-47ba0277781c"
+        title="Nossos Serviços"
         subtitle="Soluções completas em medicina e segurança do trabalho"
       />
 
-      {/* Medicina do Trabalho */}
-      <section id="medicina" className="py-16">
+      {/* Navigation Pills */}
+      <div className="sticky top-16 z-30 bg-white/95 backdrop-blur-sm border-b shadow-sm">
+        <div className="container-section py-3">
+          <div className="flex flex-wrap justify-center gap-3">
+            <a href="#medicina" className="px-5 py-2 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary-dark transition-colors">
+              Medicina Ocupacional
+            </a>
+            <a href="#seguranca" className="px-5 py-2 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary-dark transition-colors">
+              Segurança do Trabalho
+            </a>
+            <a href="#higiene" className="px-5 py-2 rounded-full bg-primary text-primary-foreground font-medium text-sm hover:bg-primary-dark transition-colors">
+              Higiene Ocupacional
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ========== MEDICINA OCUPACIONAL ========== */}
+      <section id="medicina" className="py-20">
         <div className="container-section">
-          <div className="flex flex-col lg:flex-row gap-12">
-            <div className="lg:w-1/2">
-              <div className="mb-8">
-                <h2 className="section-title">Medicina do Trabalho</h2>
-                <p className="text-gray-700">
-                  Oferecemos serviços especializados em medicina ocupacional para garantir 
-                  a saúde dos colaboradores e o cumprimento das exigências legais.
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            {/* Image + badge */}
+            <div className="lg:w-5/12 w-full">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src={medicinaImg}
+                  alt="Medicina Ocupacional - Exames e avaliações clínicas"
+                  className="w-full h-[350px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end">
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <Stethoscope className="h-6 w-6 text-white" />
+                      <span className="text-white font-montserrat font-bold text-xl">
+                        Medicina Ocupacional
+                      </span>
+                    </div>
+                    <p className="text-white/90 text-sm">
+                      Avaliação clínica ocupacional completa — anamnese e exame físico
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Highlight box */}
+              <div className="mt-6 bg-primary/5 border border-primary/20 rounded-xl p-5">
+                <h4 className="font-montserrat font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <ShieldCheck className="h-5 w-5 text-primary" />
+                  Por que é importante?
+                </h4>
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  Exames ocupacionais garantem a conformidade com as normas regulamentadoras,
+                  protegem a saúde dos colaboradores e reduzem riscos de multas e afastamentos
+                  para a empresa.
                 </p>
               </div>
-              
-              <div className="space-y-8">
-                <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4 shrink-0">
-                      <Stethoscope className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">Exames Ocupacionais</h3>
-                      <p className="text-gray-700 mb-4">
-                        Realizamos todos os tipos de exames exigidos pela legislação:
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Exames Admissionais</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Exames Periódicos</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Exames de Retorno ao Trabalho</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Exames de Mudança de Função</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Exames Demissionais</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4 shrink-0">
-                      <FileText className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">Programas e Laudos</h3>
-                      <p className="text-gray-700 mb-4">
-                        Desenvolvemos e implementamos programas exigidos pela legislação:
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">PCMSO - Programa de Controle Médico de Saúde Ocupacional</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Relatórios Anuais do PCMSO</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Gestão do ASO (Atestado de Saúde Ocupacional)</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4 shrink-0">
-                      <BriefcaseMedical className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">Serviços Complementares</h3>
-                      <p className="text-gray-700 mb-4">
-                        Oferecemos uma variedade de serviços complementares em medicina ocupacional:
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Coletas laboratoriais in company</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Exames complementares específicos</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Coordenação do PCMSO</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Assessoria médica especializada</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-6">
-                  <Link to="/contato">
-                    <Button className="bg-primary hover:bg-primary-dark">
-                      Agende seus exames agora
-                    </Button>
-                  </Link>
-                </div>
-              </div>
             </div>
-            
-            <div className="lg:w-1/2 space-y-6">
-              <img 
-                src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
-                alt="Medicina do Trabalho" 
-                className="w-full h-auto rounded-lg shadow-lg mb-6"
-              />
-              
-              <div className="bg-primary/10 p-6 rounded-lg border border-primary/20">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  Por que realizar exames ocupacionais?
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <ShieldCheck className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      <strong>Conformidade legal:</strong> Cumprimento das normas regulamentadoras do 
-                      Ministério do Trabalho, evitando multas e sanções.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ShieldCheck className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      <strong>Prevenção de doenças:</strong> Monitoramento contínuo da saúde dos 
-                      colaboradores, identificando riscos antes que se tornem problemas graves.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ShieldCheck className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      <strong>Redução de absenteísmo:</strong> Colaboradores mais saudáveis 
-                      resultam em menor índice de faltas e afastamentos.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ShieldCheck className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      <strong>Aumento da produtividade:</strong> Ambientes de trabalho mais 
-                      seguros e saudáveis contribuem para maior eficiência e bem-estar.
-                    </span>
-                  </li>
+
+            {/* Services list */}
+            <div className="lg:w-7/12 w-full">
+              <h2 className="section-title">Medicina Ocupacional</h2>
+              <p className="text-foreground/70 mb-8 max-w-xl">
+                Realizamos todos os exames e avaliações exigidos pelas normas
+                regulamentadoras, com equipe médica especializada e estrutura completa.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-x-8">
+                <ul className="space-y-1">
+                  <ServiceItem text="Exame Admissional" />
+                  <ServiceItem text="Exame Periódico" />
+                  <ServiceItem text="Exame de Retorno ao Trabalho" />
+                  <ServiceItem text="Exame de Mudança de Riscos Ocupacionais" />
+                  <ServiceItem text="Audiometria Tonal — Via Aérea, Via Óssea" />
+                  <ServiceItem text="Avaliação da Acuidade Visual" />
+                  <ServiceItem text="Avaliação do Campo Visual (Campimetria)" />
+                </ul>
+                <ul className="space-y-1">
+                  <ServiceItem text="ECG — Eletrocardiograma" />
+                  <ServiceItem text="Avaliação Psicossocial" />
+                  <ServiceItem text="EEG — Eletroencefalograma" />
+                  <ServiceItem text="Espirometria — Teste Cardiopulmonar" />
+                  <ServiceItem text="Raio X" />
+                  <ServiceItem text="Exames Laboratoriais" />
                 </ul>
               </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  Diferenciais dos nossos serviços de Medicina do Trabalho
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Equipe médica especializada em medicina do trabalho
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Estrutura completa para realização de exames
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Sistema integrado de gestão de exames ocupacionais
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Atendimento personalizado e ágil
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Opção de atendimento in company para empresas
-                    </span>
-                  </li>
-                </ul>
+
+              <div className="mt-8">
+                <Link to="/contato">
+                  <Button className="bg-primary hover:bg-primary-dark text-primary-foreground">
+                    Agende seus exames <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
-      {/* Segurança do Trabalho */}
-      <section id="seguranca" className="py-16 bg-gray-50">
+
+      {/* ========== SEGURANÇA DO TRABALHO ========== */}
+      <section id="seguranca" className="py-20 bg-muted/50">
         <div className="container-section">
-          <div className="flex flex-col lg:flex-row gap-12">
-            <div className="lg:w-1/2 order-2 lg:order-1 space-y-6">
-              <img 
-                src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7" 
-                alt="Segurança do Trabalho" 
-                className="w-full h-auto rounded-lg shadow-lg mb-6"
-              />
-              
-              <div className="bg-primary/10 p-6 rounded-lg border border-primary/20">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  Benefícios da Segurança do Trabalho
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <ShieldCheck className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      <strong>Proteção aos colaboradores:</strong> Ambientes mais seguros reduzem 
-                      drasticamente o número de acidentes e doenças ocupacionais.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ShieldCheck className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      <strong>Conformidade legal:</strong> Cumprimento das normas regulamentadoras, 
-                      evitando multas, interdições e ações trabalhistas.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ShieldCheck className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      <strong>Redução de custos:</strong> Menor incidência de acidentes significa 
-                      economia com afastamentos, substituições e indenizações.
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <ShieldCheck className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      <strong>Melhoria da imagem corporativa:</strong> Empresas que investem em 
-                      segurança são mais bem vistas por colaboradores, clientes e parceiros.
-                    </span>
-                  </li>
-                </ul>
+          <div className="flex flex-col lg:flex-row-reverse gap-12 items-start">
+            {/* Image */}
+            <div className="lg:w-5/12 w-full">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src={segurancaImg}
+                  alt="Segurança do Trabalho - Inspeção e laudos"
+                  className="w-full h-[350px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end">
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <ShieldCheck className="h-6 w-6 text-white" />
+                      <span className="text-white font-montserrat font-bold text-xl">
+                        Segurança do Trabalho
+                      </span>
+                    </div>
+                    <p className="text-white/90 text-sm">
+                      Programas, laudos e gestão para um ambiente de trabalho seguro
+                    </p>
+                  </div>
+                </div>
               </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  Diferenciais dos nossos serviços em Segurança do Trabalho
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Profissionais especializados e com vasta experiência de campo
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Abordagem preventiva e proativa na identificação e controle de riscos
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Metodologia de trabalho baseada em dados e evidências
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Soluções personalizadas para cada tipo de empresa e atividade
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <CheckCircle className="h-5 w-5 text-primary mr-3 shrink-0 mt-0.5" />
-                    <span className="text-gray-700">
-                      Acompanhamento contínuo e suporte na implementação das recomendações
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="lg:w-1/2 order-1 lg:order-2">
-              <div className="mb-8">
-                <h2 className="section-title">Segurança do Trabalho</h2>
-                <p className="text-gray-700">
-                  Nossa equipe especializada em segurança do trabalho oferece soluções 
-                  completas para garantir ambientes seguros e conformidade legal.
+
+              <div className="mt-6 bg-primary/5 border border-primary/20 rounded-xl p-5">
+                <h4 className="font-montserrat font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <ShieldCheck className="h-5 w-5 text-primary" />
+                  Prevenção, Segurança e Saúde
+                </h4>
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  Nossos programas e laudos garantem que sua empresa esteja em
+                  conformidade com todas as normas regulamentadoras, evitando multas,
+                  interdições e ações trabalhistas.
                 </p>
               </div>
-              
-              <div className="space-y-8">
-                <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4 shrink-0">
-                      <FileText className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">Programas e Laudos</h3>
-                      <p className="text-gray-700 mb-4">
-                        Desenvolvemos e implementamos programas exigidos pela legislação:
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">PGR - Programa de Gerenciamento de Riscos</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">LTCAT - Laudo Técnico das Condições Ambientais de Trabalho</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Laudos de Insalubridade e Periculosidade</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Análise Ergonômica do Trabalho</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Plano de Prevenção e Proteção Contra Incêndios (PPCI)</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4 shrink-0">
-                      <ShieldCheck className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">Consultoria e Assessoria</h3>
-                      <p className="text-gray-700 mb-4">
-                        Serviços especializados para garantir a segurança no ambiente de trabalho:
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Avaliação e gestão de riscos ocupacionais</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Adequação às normas regulamentadoras</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Análise e prevenção de acidentes de trabalho</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Dimensionamento de SESMT</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Assessoria para CIPA</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-                  <div className="flex items-start">
-                    <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center mr-4 shrink-0">
-                      <BriefcaseMedical className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800 mb-2">Treinamentos</h3>
-                      <p className="text-gray-700 mb-4">
-                        Oferecemos treinamentos obrigatórios e complementares:
-                      </p>
-                      <ul className="space-y-2">
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">NR-10 (Segurança em Instalações Elétricas)</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">NR-11 (Operação de Equipamentos)</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">NR-12 (Segurança em Máquinas e Equipamentos)</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">NR-33 (Espaços Confinados)</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">NR-35 (Trabalho em Altura)</span>
-                        </li>
-                        <li className="flex items-center">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2" />
-                          <span className="text-gray-700">Primeiros socorros e brigada de incêndio</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="mt-6">
-                  <Link to="/contato">
-                    <Button className="bg-primary hover:bg-primary-dark">
-                      Solicite uma consultoria
-                    </Button>
-                  </Link>
-                </div>
+            </div>
+
+            {/* Services */}
+            <div className="lg:w-7/12 w-full">
+              <h2 className="section-title">Segurança do Trabalho</h2>
+              <p className="text-foreground/70 mb-8 max-w-xl">
+                Desenvolvemos programas, laudos técnicos e serviços de gestão para
+                garantir a segurança e a conformidade legal da sua empresa.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-x-8">
+                <ul className="space-y-1">
+                  <ServiceItem text="Gestão e Controle dos Exames Periódicos" />
+                  <ServiceItem text="Gestão dos Eventos e-Social" />
+                  <ServiceItem text="PGR — Programa de Gerenciamento de Risco" />
+                  <ServiceItem text="PCMSO — Programa de Controle Médico e Saúde Ocupacional" />
+                  <ServiceItem text="LTCAT — Laudo Técnico de Condições no Ambiente de Trabalho" />
+                  <ServiceItem text="Laudo de Insalubridade" />
+                  <ServiceItem text="Laudo de Periculosidade" />
+                </ul>
+                <ul className="space-y-1">
+                  <ServiceItem text="Avaliações Quantitativas de Riscos Ambientais" />
+                  <ServiceItem text="AET — Análise Ergonômica do Trabalho" />
+                  <ServiceItem text="Assistência Técnica Pericial" />
+                  <ServiceItem text="Auditoria ISO 9001" />
+                  <ServiceItem text="POP — Elaboração de Procedimento Operacional Padrão" />
+                  <ServiceItem text="PCA — Programa de Conservação Auditiva" />
+                </ul>
+              </div>
+
+              <div className="mt-8">
+                <Link to="/contato">
+                  <Button className="bg-primary hover:bg-primary-dark text-primary-foreground">
+                    Solicite uma consultoria <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
-      
+
+      {/* ========== HIGIENE OCUPACIONAL ========== */}
+      <section id="higiene" className="py-20">
+        <div className="container-section">
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
+            {/* Image */}
+            <div className="lg:w-5/12 w-full">
+              <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                <img
+                  src={higieneImg}
+                  alt="Higiene Ocupacional - Avaliações quantitativas"
+                  className="w-full h-[350px] object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end">
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-2">
+                      <FlaskConical className="h-6 w-6 text-white" />
+                      <span className="text-white font-montserrat font-bold text-xl">
+                        Higiene Ocupacional
+                      </span>
+                    </div>
+                    <p className="text-white/90 text-sm">
+                      Avaliações quantitativas de agentes ambientais e riscos ocupacionais
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 bg-primary/5 border border-primary/20 rounded-xl p-5">
+                <h4 className="font-montserrat font-semibold text-foreground mb-3 flex items-center gap-2">
+                  <ShieldCheck className="h-5 w-5 text-primary" />
+                  Saúde e Segurança no Trabalho
+                </h4>
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  As avaliações de higiene ocupacional identificam e quantificam agentes
+                  nocivos no ambiente de trabalho, fundamentais para a elaboração de laudos
+                  e programas de prevenção.
+                </p>
+              </div>
+            </div>
+
+            {/* Services */}
+            <div className="lg:w-7/12 w-full">
+              <h2 className="section-title">Higiene Ocupacional</h2>
+              <p className="text-foreground/70 mb-8 max-w-xl">
+                Realizamos avaliações quantitativas de agentes físicos, químicos e
+                biológicos presentes no ambiente de trabalho.
+              </p>
+
+              <ul className="space-y-1 max-w-lg">
+                <ServiceItem text="Dosimetria — Avaliação Quantitativa de Ruído" />
+                <ServiceItem text="Avaliação de Vibração Quantitativa de Corpo Inteiro, Punho e Braços" />
+                <ServiceItem text="Termômetro de Globo — Avaliação Quantitativa de Stress Térmico" />
+                <ServiceItem text="Bomba de Amostragem — Avaliação Quantitativa de Agentes Químicos" />
+              </ul>
+
+              <div className="mt-8">
+                <Link to="/contato">
+                  <Button className="bg-primary hover:bg-primary-dark text-primary-foreground">
+                    Solicite um orçamento <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
-      <section id="faq" className="py-16">
+      <section id="faq" className="py-16 bg-muted/50">
         <div className="container-section">
           <div className="text-center mb-12">
             <h2 className="section-title">Perguntas Frequentes</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-foreground/60 max-w-2xl mx-auto">
               Esclarecemos suas principais dúvidas sobre medicina e segurança do trabalho.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                Quais exames ocupacionais são obrigatórios?
-              </h3>
-              <p className="text-gray-700">
-                São obrigatórios os exames admissionais, periódicos, de retorno ao trabalho 
-                (após afastamento superior a 30 dias), de mudança de função e demissionais. 
-                O médico coordenador do PCMSO determinará os exames complementares necessários 
-                conforme os riscos ocupacionais.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                Como saber quais programas minha empresa precisa implementar?
-              </h3>
-              <p className="text-gray-700">
-                Os programas obrigatórios dependem do grau de risco e número de funcionários da 
-                empresa. O PCMSO e o PGR são obrigatórios para todas as empresas com empregados 
-                regidos pela CLT. Nossa equipe pode realizar uma avaliação para determinar exatamente 
-                o que sua empresa precisa.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                É possível realizar os exames na própria empresa?
-              </h3>
-              <p className="text-gray-700">
-                Sim, oferecemos o serviço in company para empresas com um número mínimo de funcionários. 
-                Nossa equipe pode se deslocar até a empresa para realizar exames clínicos e coletas para 
-                exames complementares, otimizando tempo e reduzindo a ausência dos colaboradores.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                Qual a diferença entre PGR e PPRA?
-              </h3>
-              <p className="text-gray-700">
-                O PGR (Programa de Gerenciamento de Riscos) substituiu o PPRA (Programa de Prevenção de 
-                Riscos Ambientais) com a nova NR-1. O PGR é mais abrangente, contemplando não apenas os 
-                riscos ambientais, mas também os riscos ergonômicos e de acidentes, além de exigir um 
-                inventário de riscos mais detalhado e plano de ação.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                Quais são as consequências de não cumprir as normas de SST?
-              </h3>
-              <p className="text-gray-700">
-                O não cumprimento pode resultar em multas que variam conforme o porte da empresa e a 
-                gravidade da infração, interdição de setores ou da empresa inteira, ações civis públicas, 
-                ações trabalhistas, aumento de alíquota de SAT/RAT e dificuldades para obter certidões 
-                e financiamentos.
-              </p>
-            </div>
-            
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-100">
-              <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                Qual a periodicidade dos treinamentos de segurança?
-              </h3>
-              <p className="text-gray-700">
-                A periodicidade varia conforme a norma regulamentadora. Por exemplo, treinamentos de 
-                NR-10 têm validade de 2 anos, NR-33 e NR-35 de 1 ano. Já outros, como da CIPA, são 
-                realizados a cada novo mandato. Consulte nossa equipe para verificar a periodicidade 
-                específica para sua empresa.
-              </p>
-            </div>
+            {[
+              {
+                q: "Quais exames ocupacionais são obrigatórios?",
+                a: "São obrigatórios os exames admissionais, periódicos, de retorno ao trabalho (após afastamento superior a 30 dias), de mudança de função e demissionais. O médico coordenador do PCMSO determinará os exames complementares necessários conforme os riscos ocupacionais.",
+              },
+              {
+                q: "Como saber quais programas minha empresa precisa?",
+                a: "Os programas obrigatórios dependem do grau de risco e número de funcionários da empresa. O PCMSO e o PGR são obrigatórios para todas as empresas com empregados regidos pela CLT. Nossa equipe pode realizar uma avaliação para determinar o que sua empresa precisa.",
+              },
+              {
+                q: "É possível realizar os exames na própria empresa?",
+                a: "Sim, oferecemos o serviço in company para empresas com um número mínimo de funcionários. Nossa equipe pode se deslocar até a empresa para realizar exames clínicos e coletas para exames complementares.",
+              },
+              {
+                q: "Qual a diferença entre PGR e PPRA?",
+                a: "O PGR (Programa de Gerenciamento de Riscos) substituiu o PPRA com a nova NR-1. O PGR é mais abrangente, contemplando riscos ergonômicos e de acidentes, além de exigir um inventário de riscos mais detalhado e plano de ação.",
+              },
+              {
+                q: "Quais as consequências de não cumprir as normas de SST?",
+                a: "O não cumprimento pode resultar em multas, interdição de setores, ações civis públicas, ações trabalhistas, aumento de alíquota de SAT/RAT e dificuldades para obter certidões e financiamentos.",
+              },
+              {
+                q: "O que é Higiene Ocupacional?",
+                a: "Higiene Ocupacional é a ciência que antecipa, reconhece, avalia e controla os agentes ambientais (ruído, calor, vibração, agentes químicos) presentes no ambiente de trabalho, prevenindo doenças ocupacionais.",
+              },
+            ].map((faq, i) => (
+              <div
+                key={i}
+                className="bg-background p-6 rounded-xl shadow-md border border-border"
+              >
+                <h3 className="text-lg font-semibold text-foreground mb-3">
+                  {faq.q}
+                </h3>
+                <p className="text-foreground/70 text-sm leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -531,8 +348,8 @@ const Servicos = () => {
             Pronto para proteger seus colaboradores?
           </h2>
           <p className="text-white/90 text-xl mb-8 max-w-3xl mx-auto">
-            Entre em contato conosco hoje mesmo para uma avaliação personalizada 
-            das necessidades de medicina e segurança do trabalho da sua empresa.
+            Entre em contato conosco para uma avaliação personalizada das
+            necessidades de medicina e segurança do trabalho da sua empresa.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link to="/contato">
@@ -540,9 +357,12 @@ const Servicos = () => {
                 Solicitar proposta
               </Button>
             </Link>
-            <a href="tel:+551199999999">
-              <Button variant="outline" className="text-white border-white hover:bg-white/10 text-lg px-6 py-3">
-                Ligue: (11) 9999-9999
+            <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
+              <Button
+                variant="outline"
+                className="text-white border-white hover:bg-white/10 text-lg px-6 py-3"
+              >
+                Fale pelo WhatsApp
               </Button>
             </a>
           </div>
