@@ -359,8 +359,7 @@ const Servicos = () => {
             </Link>
             <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
               <Button
-                variant="outline"
-                className="text-white border-white hover:bg-white/10 text-lg px-6 py-3"
+                className="bg-transparent text-white border border-white hover:bg-white/10 text-lg px-6 py-3"
               >
                 Fale pelo WhatsApp
               </Button>
