@@ -47,7 +47,7 @@ const PopupConsulta = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "c4d09973-2184-4969-8d54-6d97c51edb08", // Usando a mesma chave do formulário de contato
+          access_key: "597d6452-4f80-49af-8ef4-732ed443b90e", // Usando a mesma chave do formulário de contato
           subject: "Solicitação de Guia de Normas Regulamentadoras",
           from_name: "Visitante do Site",
           email: email, // Email do usuário que preencheu o formulário
