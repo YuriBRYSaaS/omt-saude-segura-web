@@ -38,11 +38,11 @@ const ContactForm = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "a2c2911b-76a4-4b1d-ada7-23e1878935e2", // Would need a real access key in production
+          access_key: "c4d09973-2184-4969-8d54-6d97c51edb08", // Would need a real access key in production
           subject: `Nova mensagem de contato de ${formData.name}`,
           from_name: formData.name,
           email: formData.email,
-          to: "yurivilela.dev@outlook.com",
+          to: "contato@omtmedicinadotrabalho.com.br",
           message: `
             Nome: ${formData.name}
             Email: ${formData.email}

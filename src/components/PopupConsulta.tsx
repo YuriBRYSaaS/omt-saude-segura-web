@@ -47,11 +47,11 @@ const PopupConsulta = () => {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "a2c2911b-76a4-4b1d-ada7-23e1878935e2", // Usando a mesma chave do formulário de contato
+          access_key: "c4d09973-2184-4969-8d54-6d97c51edb08", // Usando a mesma chave do formulário de contato
           subject: "Solicitação de Guia de Normas Regulamentadoras",
           from_name: "Visitante do Site",
           email: email, // Email do usuário que preencheu o formulário
-          to: "yurivilela.dev@outlook.com",
+          to: "contato@omtmedicinadotrabalho.com.br",
           message: `
             Um visitante solicitou o guia de Normas Regulamentadoras.
             
